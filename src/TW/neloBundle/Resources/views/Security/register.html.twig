@@ -1,0 +1,43 @@
+{% extends '::base.html.twig' %}
+
+{% block body %} 
+
+	<section id="error" class="container">
+	
+		{{ form_start(form) }}
+			{{ form_errors(form) }}
+
+			<fieldset class="registration-form">
+				<div class="control-group" align="center">
+					<div class="controls">
+						{{ form_label(form.username) }}
+						{{ form_errors(form.username) }}
+						{{ form_widget(form.username, { 'attr': {'class': 'input-xlarge', 'placeholder': 'Username', 'id': 'username', 'name': 'username'}}) }}
+					</div>
+				</div>
+				<div class="control-group" align="center">
+					<div class="controls">
+						{{ form_errors(form.password) }}
+						{{ form_widget(form.password, { 'attr': {'class': 'input-xlarge', 'placeholder': 'Password', 'id': 'password', 'name': 'password'}}) }}
+					</div>
+				</div>
+				<div class="control-group" align="center">
+					<div class="controls">
+						{{ form_label(form.email) }}
+						{{ form_errors(form.email) }}
+						{{ form_widget(form.email, { 'attr': {'class': 'input-xlarge', 'placeholder': 'Email', 'id': 'email', 'name': 'email'}}) }}
+					</div>
+				</div>
+				<div class="control-group" align="center">
+					<div class="controls">
+						{{ form_label(form.Register) }}
+						{{ form_widget(form.Register, { 'attr': {'class': 'btn btn-success btn-large btn-block', 'id': 'submit', 'name': 'submit'}}) }}
+					</div>
+				</div>
+			</fieldset>
+
+		{{ form_end(form) }}
+
+	</section>
+
+{% endblock %}

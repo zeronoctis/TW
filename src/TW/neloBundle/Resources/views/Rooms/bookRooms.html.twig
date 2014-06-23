@@ -1,0 +1,94 @@
+{% extends '::base.html.twig' %}
+
+	{% block title %} Rooms available {% endblock %}
+	
+{% block body %}
+
+  <section id="error" class="container main">
+  
+   <div class="row-fluid">
+
+  
+    <div class="span5" align="right">
+        <fieldset class="registration-form">
+      
+        {{ form_start(form) }}
+
+          <div class="control-group" align="center">
+           {{ error }}
+            <div class="controls">
+              {{ form_label(form.arrivalDate) }}
+              {{ form_errors(form.arrivalDate) }}
+              {{ form_widget(form.arrivalDate, { 'attr': {'class': 'input-xlarge', 'value': "now"|date("Y/m/d")  }}) }}
+            </div>
+          </div>
+          <div class="control-group" align="center">
+            <div class="controls">
+              {{ form_label(form.leavingDate) }}
+              {{ form_errors(form.leavingDate) }}
+              {{ form_widget(form.leavingDate, { 'attr': {'class': 'input-xlarge', 'value': "now"|date("Y/m/d") }}) }}
+            </div>
+          </div>
+          <div class="control-group" align="center">
+            <div class="controls">
+              {{ form_label(form.Book) }}
+              {{ form_widget(form.Book, { 'attr': {'class': 'btn btn-success btn-large btn-block', 'id': 'submit', 'name': 'submit'}}) }}
+            </div>
+          </div>
+          <div class="control-group" align="center">
+            <div class="controls">
+              {{ form_label(form.Back) }}
+              {{ form_widget(form.Back, { 'attr': {'class': 'btn btn-success btn-large btn-block', 'id': 'submit', 'name': 'submit'}}) }}
+            </div>
+          </div>
+          <div class="control-group" align="center">
+            <div class="controls">
+               {{ form_end(form) }}
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+     <div class="span4" align="right">
+
+        <fieldset class="registration-form">
+          <div class="control-group" align="center" style="width: 400px; height: 400px; overflow-y: scroll;">
+            <h3>All available rooms:</h3>
+            <div class="controls" align="left">
+              <ul> 
+                {% for room in rooms %}
+                  <li {% if room.getOverbooked == 1 %} style="background-color: #ffffcc;"  {% endif %}
+                      {% if room.getOverbooked == 0 %} style="background-color: #ccffcc;"  {% endif %} 
+                  >
+                    <b><font size="2"> Room Number:</font></b> {{ room.number }} 
+                    <ul>
+                      <li>
+                        <i><b>Price:</b></i> {{ room.price }} LEI
+                      </li>
+                      <li>
+                        <i><b>Facilities:</b></i>
+                        {% for facility in room.getFacilities %}
+                          {{ facility.facility }},
+                        {% endfor %}
+                      </li>
+                      <li>
+                        <i><b>Type:</b></i>
+                        {{ room.getType.name }}
+                      </li>
+                    </ul>
+                  </li> 
+                {% endfor %}
+              <ul/>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+  
+ </div>
+   
+
+  </section>
+
+{% endblock %}
+	 

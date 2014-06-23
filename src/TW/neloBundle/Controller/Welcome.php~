@@ -1,0 +1,13 @@
+<?php
+
+namespace TW\neloBundle\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+class Welcome{
+	public function indexAction($name){
+		return $this->render('neloBundle:Welcome:index.html.twig',
+		array('name' => $name));	
+	}
+}
+
+?>

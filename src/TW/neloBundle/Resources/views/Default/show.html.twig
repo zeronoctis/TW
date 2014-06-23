@@ -1,0 +1,43 @@
+{% extends '::base.html.twig' %}
+
+	{% block title %} Home {% endblock %}
+	
+	{% block body %}
+
+		{% for product in products %}	
+			<p>
+				Id {{ product.id }}
+				Name {{ product.name }}
+				Price {{ product.price }}
+				Description {{ product.description }} 
+			</p>
+	 	{% endfor %}
+
+	 {% endblock %}
+
+	 
+	 {#
+
+	 		{% for product in products %}	
+			<p>
+				Id {{ product.id }}
+				Name {{ product.name }}
+				Price {{ product.price }}
+				Description {{ product.description }} 
+			</p>
+	 	{% endfor %}
+
+
+
+
+	 	<h1>Product</h1>
+		{%if product %}
+		<p> Id {{ product.id }} </p>
+		<p> Name {{ product.name }} </p>
+		<p> Price {{ product.price }} </p>
+		<p> Description {{ product.description }} </p>
+	 	{%endif%}
+
+	 #}
+
+	 

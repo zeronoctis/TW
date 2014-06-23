@@ -1,0 +1,106 @@
+{% extends '::base.html.twig' %}
+
+{% block body %} 
+
+	<section id="error" class="container">
+	
+		{{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+
+		<div class="row-fluid">
+			 <div class="span1" align="center">
+
+				<fieldset class="registration-form">
+					<div class="control-group" align="center">
+						<h3>Facilities:</h3>
+						<div class="controls" align="left">
+							{{ form_errors(form.facilities) }}
+							{{ form_widget(form.facilities) }}
+						</div>
+					</div>
+				</fieldset>
+				<fieldset class="registration-form">
+					<div class="control-group" align="center">
+						<h3>Types:</h3>
+						<div class="controls" align="left">
+							{{ form_errors(form.types) }}
+							{{ form_widget(form.types) }}
+						</div>
+					</div>
+				</fieldset>
+			</div>
+	        <div class="span6" align="right">
+
+				<fieldset class="registration-form">
+					<div class="control-group" align="center">
+						{{ error }}
+						<div class="controls">
+							{{ form_errors(form.number) }}
+							{{ form_widget(form.number, { 'attr': {'class': 'input-xlarge', 'placeholder': 'Room number', 'autocomplete': 'off', 'value': ''}}) }}
+						</div>
+					</div>
+					<div class="control-group" align="center">
+						<div class="controls">
+							{{ form_errors(form.price) }}
+							{{ form_widget(form.price, { 'attr': {'class': 'input-xlarge', 'placeholder': 'Room price', 'autocomplete': 'off', 'value': ''}}) }}
+						</div>
+					</div>
+					<div class="control-group" align="center">
+						<div class="controls">
+							{{ form_label(form.Add) }}
+							{{ form_widget(form.Add, { 'attr': {'class': 'btn btn-success btn-large btn-block', 'id': 'submit', 'name': 'submit'}}) }}
+						</div>
+					</div>
+
+					{% for facility in form.facilities %}
+						{{ facilities }}
+					{% endfor %}	
+
+					<div class="control-group" align="center">
+						<div class="controls">
+							{{ form_label(form.Back) }}
+							{{ form_widget(form.Back, { 'attr': {'class': 'btn btn-success btn-large btn-block', 'id': 'submit', 'name': 'submit'}}) }}
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+	        <div class="span3" align="left">
+
+				<fieldset class="registration-form">
+					<div class="control-group" align="center" style="width: 400px; height: 400px; overflow-y: scroll;">
+						<h3>All existent rooms:</h3>
+						<div class="controls" align="left">
+							<ul> 
+								{% for room in rooms %}
+									<li>
+										<b><font size="2"> Room Number:</font></b> {{ room.number }} 
+										<ul>
+											<li>
+												<i><b>Price:</b></i> {{ room.price }} LEI
+											</li>
+											<li>
+												<i><b>Facilities:</b></i>
+												{% for facility in room.getFacilities %}
+													{{ facility.facility }},
+												{% endfor %}
+											</li>
+											<li>
+												<i><b>Type:</b></i>
+												{{ room.getType.name }}
+											</li>
+										</ul>
+									</li>	
+								{% endfor %}
+							<ul/>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+
+		{{ form_end(form) }}
+
+	</section>
+
+{% endblock %}
+

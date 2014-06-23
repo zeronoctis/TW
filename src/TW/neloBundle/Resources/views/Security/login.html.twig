@@ -1,0 +1,34 @@
+{% extends '::base.html.twig' %}
+
+{% block body %} 
+	 
+<div id="error">          
+	<section id="login-page" class="container" >
+	
+		<form action = "{{ path('login_check') }}" method = "POST">
+			<fieldset class="registration-form">
+				<div class="control-group" align="center">
+					<div class="controls">
+						<label for = "username">Username:</label>
+						<input type = "text" id = "username" name = "_username" value = "{{ last_username }}" class = "input-xlarge" placeholder = "Username" />
+					</div>
+				</div>
+				<div class="control-group" align="center">
+					<div class="controls">
+							<label for = "password">Password:</label>
+							<input type = "password" id = "password" name = "_password" value = "{{ last_username }}" class = "input-xlarge" placeholder = "Password" />
+					</div>
+				</div>
+		
+				<div class="control-group" align="center">
+					<div class="controls">
+						<button type = "submit" class = "btn btn-success btn-large btn-block">Login</button>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+
+	</section>
+</div>
+
+{% endblock %}

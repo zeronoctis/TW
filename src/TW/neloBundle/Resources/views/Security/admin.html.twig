@@ -1,0 +1,54 @@
+{% extends '::base.html.twig' %}
+
+	{% block title %} Admin Page {% endblock %}
+	
+{% block body %}
+		
+		<section id="admin actions" class="container">
+			</br>
+	        <ul class="faq">
+	         <li>
+	            <span class="number">01</span>
+	            <div>
+	                <a href=" {{ path('manage_facilities') }}" ><h4>Manage Room Facilities</h4></a>
+	                <p>You can add or delete facilites as overall.</p>
+	            </div>
+	        </li>
+
+	        <li>
+	            <span class="number">02</span>
+	            <div>
+	                <a href=" {{ path('manage_types') }}" ><h4>Manage Room Types</h4></a>
+	                <p>You can delete existing types or add new ones.</p>
+	            </div>
+	        </li>
+
+	        <li>
+	            <span class="number">03</span>
+	            <div>
+	                <a href=" {{ path('manage_rooms_add') }}" > <h4>Add a new Room</h4></a>
+	                <p>Here you can add new rooms.</p>
+	            </div>
+	        </li>
+			
+			<li>
+	            <span class="number">04</span>
+	            <div>
+	                <a href=" {{ path('manage_rooms_delete') }}" ><h4>Delete a Room</h4></a>
+	                <p>You can delete existing rooms.</p>
+	            </div>
+	        </li>
+
+	        <li>
+	            <span class="number">05</span>
+	            <div>
+	                <a href=" {{ path('logout') }}" > <h4>Logout</h4></a>
+	                <p>Not too much to do here...</p>
+	            </div>
+	        </li>
+	    </ul>
+	    <p>&nbsp;</p>
+	    
+	</section>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+<?php
+
+namespace TW\neloBundle\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+class RoomsController extends Controller{
+	public function roomsAction(){
+		return $this->render('TWneloBundle:Rooms:rooms.html.twig');	
+	}
+}
+
+?>

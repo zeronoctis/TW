@@ -1,0 +1,94 @@
+welcome:
+    path:  /home/
+    defaults: { _controller: TWneloBundle:Default:home }
+
+home:
+    path:  /
+    defaults: { _controller: TWneloBundle:Default:gohome }
+
+rooms:
+    path:  /rooms/
+    defaults: { _controller: TWneloBundle:Rooms:rooms }
+
+booking:
+    path:  /rooms/booking/{type}
+    defaults: { _controller: TWneloBundle:Rooms:booking }
+
+services:
+    path:  /services/
+    defaults: { _controller: TWneloBundle:Services:services }
+
+about_us:
+    path:  /about/
+    defaults: { _controller: TWneloBundle:About:about }
+
+location:
+    path:  /location/
+    defaults: { _controller: TWneloBundle:Contact:location }
+
+FAQ:
+    path:  /faq/
+    defaults: { _controller: TWneloBundle:Useful:faq }
+
+termsofuse:
+    path:  /termsofuse/
+    defaults: { _controller: TWneloBundle:Useful:terms }
+
+policy:
+    path:  /policy/
+    defaults: { _controller: TWneloBundle:Useful:policy }
+
+generalinfo:
+    path:  /generalinfo/
+    defaults: { _controller: TWneloBundle:Useful:generalinfo }
+
+register:
+    path:  /register
+    defaults: { _controller: TWneloBundle:Security:register }
+
+login:
+    path:  /login
+    defaults: { _controller: TWneloBundle:Security:login }
+
+login_check:
+    path:  /login_check
+
+logout:
+    path:  /logout
+
+add_rooms:
+    path:  /admin/add/rooms/
+    defaults: { _controller: TWneloBundle:Rooms:add }
+
+admin_page:
+    path:  /admin/
+    defaults: { _controller: TWneloBundle:Security:admin }
+
+manage_facilities:
+    path:  /admin/facilities/
+    defaults: { _controller: TWneloBundle:Rooms:manageFacility }
+
+manage_types:
+    path:  /admin/types/
+    defaults: { _controller: TWneloBundle:Rooms:manageType }
+
+manage_rooms_add:
+    path:  /admin/rooms/add
+    defaults: { _controller: TWneloBundle:Rooms:manageRoomAdd }
+
+manage_rooms_delete:
+    path:  /admin/rooms/delete
+    defaults: { _controller: TWneloBundle:Rooms:manageRoomDelete }
+
+form:
+    path:  /form/
+    defaults: { _controller: TWneloBundle:Rooms:room }
+
+
+
+
+
+
+
+
+

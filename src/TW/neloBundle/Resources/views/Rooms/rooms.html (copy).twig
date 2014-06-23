@@ -1,0 +1,148 @@
+{% extends '::base.html.twig' %}
+
+	{% block title %} Rooms {% endblock %}
+	
+	{% block body %}
+				
+		
+    <form method="POST" id="form-book">
+    <section id="portfolio" class="container main">    
+        <ul class="gallery col-4">
+            <!--Item 1-->
+            <li>
+                <div class="preview">
+                    <img src="{{ asset('bundles/twnelo/images/portfolio/thumb/item1.jpg') }}">
+                    <div class="overlay">
+                    </div>
+                </div>
+                <div class="desc">
+                    <h5>Single apartment</h5>
+                        <strong>Beds: </strong>Double bed<br/>
+                        <strong>Total rooms: </strong>5<br/>
+                        <strong>Prices: </strong>160 LEI<br/>
+                    <button type = "submit" name="singleapartment" value ="1" class="btn btn-success btn-small">Book a room !</button>
+                </div>          
+            </li>
+            <!--/Item 1--> 
+
+            <!--Item 2-->
+            <li>
+                <div class="preview">
+                    <img src="{{ asset('bundles/twnelo/images/portfolio/thumb/item2.jpg') }}">
+                    <div class="overlay">
+                    </div>
+                </div>
+                <div class="desc">
+                    <h5>Double room</h5>
+                        <strong>Beds: </strong>Double bed<br/>
+                        <strong>Total rooms: </strong>20<br/>
+                        <strong>Prices: </strong>150 LEI<br/>
+                    <button type = "submit" name="doubleroom" value ="2"  class="btn btn-success btn-small">Book a room !</button>
+                </div>                 
+            </li>
+            <!--/Item 2-->
+
+            <!--Item 3-->
+            <li>
+                <div class="preview">
+                    <img src="{{ asset('bundles/twnelo/images/portfolio/thumb/item3.jpg') }}">
+                    <div class="overlay">
+                    </div>
+                </div>
+                <div class="desc">
+                    <h5>Single room</h5>
+                        <strong>Beds: </strong>Single bed<br/>
+                        <strong>Total rooms: </strong>20<br/>
+                        <strong>Prices: </strong>100 LEI<br/>
+                    <button type = "submit" name="singleroom" value ="3"  class="btn btn-success btn-small">Book a room !</button>
+                </div>                
+            </li>
+            <!--/Item 3--> 
+
+            <!--Item 4-->
+            <li>
+                <div class="preview">
+                    <img src="{{ asset('bundles/twnelo/images/portfolio/thumb/item4.jpg') }}">
+                    <div class="overlay">
+                    </div>
+                </div>
+                <div class="desc">
+                    <h5>Double apartment</h5>
+                        <strong>Beds: </strong>Couch, Double bed<br/>
+                        <strong>Total rooms: </strong>5<br/>
+                        <strong>Prices: </strong>180 LEI<br/>
+                    <button type = "submit" name="doubleapartment" value ="4"  class="btn btn-success btn-small">Book a room !</button>
+                </div>                
+            </li>
+            <!--/Item 4--> 
+
+            <!--Item 5-->
+            <li>
+                <div class="preview">
+                    <img src="{{ asset('bundles/twnelo/images/portfolio/thumb/item5.jpg') }}">
+                    <div class="overlay">
+                    </div>
+                </div>
+                <div class="desc">
+                    <h5>Young men's apartment</h5>
+                        <strong>Beds: </strong>Single bed<br/>
+                        <strong>Total rooms: </strong>5<br/>
+                        <strong>Prices: </strong>150 LEI<br/>
+                    <button type = "submit" name="youngapartment" value ="5"  class="btn btn-success btn-small">Book a room !</button>
+                </div>                
+            </li>
+            <!--/Item 5--> 
+
+            <!--Item 6-->
+            <li>
+                <div class="preview">
+                    <img src="{{ asset('bundles/twnelo/images/portfolio/thumb/item6.jpg') }}">
+                    <div class="overlay">
+                    </div>
+                </div>
+                <div class="desc">
+                    <h5>Corporate apartment</h5>
+                        <strong>Beds: </strong>Single bed<br/>
+                        <strong>Total rooms: </strong>3<br/>
+                        <strong>Prices: </strong>200 LEI<br/>
+                    <button type = "submit" name="corporateapartment" value ="6"  class="btn btn-success btn-small">Book a room !</button>
+                </div>                 
+            </li>
+            <!--/Item 6-->                 
+
+            <!--Item 7-->
+            <li>
+                <div class="preview">
+                    <img src="{{ asset('bundles/twnelo/images/portfolio/thumb/item7.jpg') }}">
+                    <div class="overlay">
+                    </div>
+                </div>
+                <div class="desc">
+                    <h5>Presidential apartment</h5>
+                       <strong>Beds: </strong>King bed<br/>
+                        <strong>Total rooms: </strong>1<br/>
+                        <strong>Prices: </strong>250 LEI<br/>
+                    <button type = "submit" name="presidentialapartment" value ="7"  class="btn btn-success btn-small">Book a room !</button>
+                </div>
+            </li>
+            <!--/Item 7-->
+
+            <!--Item 8-->
+            <li>
+                <div class="preview">
+                    <img src="{{ asset('bundles/twnelo/images/portfolio/thumb/item8.jpg') }}">
+                    <div class="overlay">
+                    </div>
+                </div>
+                <div class="desc">
+                    <h5>Royal apartment</h5>
+                       <strong>Beds: </strong>Couch, King bed<br/>
+                       <strong>Total rooms: </strong>1<br/>
+                       <strong>Prices: </strong>300 LEI<br/>
+                    <button type = "submit" name="royalapartment" value ="8"  class="btn btn-success btn-small">Book a room !</button>
+                </div>                 
+            </li>
+            <!--/Item 8-->
+        </ul>
+
+	{% endblock %} 

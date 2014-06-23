@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+        <title>{% block title %} Welcome to neLo {% endblock %}</title>
+
+        {% block stylesheets %}
+            {% stylesheets 'bundles/twnelo/css/*' filter='cssrewrite' %}
+                <link href="{{ asset('bundles/twnelo/css/bootstrap.min.css') }}" rel="stylesheet" />
+                <link href="{{ asset('bundles/twnelo/css/bootstrap-responsive.min.css') }}" rel="stylesheet" />
+                <link href="{{ asset('bundles/twnelo/css/font-awesome.min.css') }}" rel="stylesheet" />
+                <link href="{{ asset('bundles/twnelo/css/sl-slide.css') }}" rel="stylesheet" />
+                <link href="{{ asset('bundles/twnelo/css/main.css') }}" rel="stylesheet" />
+            {% endstylesheets %}
+        {% endblock %}
+       <script src="{{ asset('bundles/twnelo/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
+      
+    </head>
+
+    <body>
+     
+        <!--Header-->
+        <header class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a id="logo" class="pull-left" href="index.html"></a>
+                    <div class="nav-collapse collapse pull-right">
+                        <ul class="nav">
+                            <li><a href=" {{ path('welcome') }} ">Home</a></li>
+                            <li><a href=" {{ path('rooms') }} ">Rooms</a></li>
+                            <li><a href=" {{ path('services') }} ">Services</a></li>
+                            <li><a href=" {{ path('about_us') }} ">About Us</a></li>
+                            <li><a href=" {{ path('location') }} ">Our Location</a></li>
+                            <li class="login"><a data-toggle="modal" href=" {{ path('login') }} "><i class="icon-lock"></i></a>
+                            </li>
+                        </ul>        
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </header>
+        <!-- /header -->
+
+
+        <div id="content">
+            {% block body %} 
+            {% endblock %}
+            {% block javascripts %}
+                    <script src="{{ asset('bundles/twnelo/js/vendor/jquery-1.9.1.min.js') }}"></script>
+                    <script src="{{ asset('bundles/twnelo/js/vendor/bootstrap.min.js') }}"></script>
+                    <script src="{{ asset('bundles/twnelo/js/main.js') }}"></script>
+            {% endblock %}
+        </div>
+
+        <!--Bottom-->
+        <section id="bottom" class="main">
+            <!--Container-->
+            <div class="container">
+
+                <!--row-fluids-->
+                <div class="row-fluid">
+
+                    <!--Contact Form-->
+                    <div class="span3">
+                        <h4>ADDRESS</h4>
+                        <ul class="unstyled address">
+                            <li>
+                                <i class="icon-home"></i><strong>Address:</strong> Strada Gen. Berthelot 16, Iași<br>
+                            </li>
+                            <li>
+                                <i class="icon-envelope"></i>
+                                <strong>Email: </strong> support@neLO.com
+                            </li>
+                            <li>
+                                <i class="icon-globe"></i>
+                                <strong>Website:</strong> www.neLO.com
+                            </li>
+                            <li>
+                                <i class="icon-phone"></i>
+                                <strong>Toll Free:</strong> 631-409-3105
+                            </li>
+                        </ul>
+                    </div>
+                    <!--End Contact Form-->
+
+                    <!--Important Links-->
+                    <div id="tweets" class="span3">
+                        <h4>OUR COMPANY</h4>
+                        <div>
+                            <ul class="arrow">
+                                <li><a href=" {{ path('welcome') }} ">Home</a></li>
+                                <li><a href=" {{ path('rooms') }} ">Rooms</a></li>
+                                <li><a href=" {{ path('services') }} ">Services</a></li>
+                                <li><a href=" {{ path('about_us') }} ">About Us</a></li>
+                                <li><a href=" {{ path('location') }} ">Our Location</a></li>
+                            </ul>
+                        </div>  
+                    </div>
+                    <!--Important Links-->
+                  
+                    <!--Important Links-->
+                    <div id="tweets" class="span3">
+                        <h4>USEFULL</h4>
+                        <div>
+                            <ul class="arrow">
+                                <li><a href=" {{ path('register') }} ">Register</a></li>
+                                <li><a href=" {{ path('FAQ') }} ">FAQ</a></li>
+                                <li><a href=" {{ path('termsofuse') }} ">Terms Of Use</a></li>
+                                <li><a href=" {{ path('policy') }} ">Privacy Policy</a></li>
+                                <li><a href=" {{ path('generalinfo') }} " target ="_blank" >General Information</a></li>
+                                <li><a href=" {{ path('logout') }} ">Log Out</li>
+                            </ul>
+                        </div>  
+                    </div>
+                    <!--Important Links-->
+
+                </div>
+
+            </div>
+            <!--/row-fluid-->
+        </div>
+        <!--/container-->
+
+        <!--/bottom-->
+
+    </body>
+</html>

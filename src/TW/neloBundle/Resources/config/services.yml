@@ -1,0 +1,7 @@
+parameters:
+#    t_wnelo.example.class: TW\neloBundle\Example
+
+services:
+#    t_wnelo.example:
+#        class: %t_wnelo.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

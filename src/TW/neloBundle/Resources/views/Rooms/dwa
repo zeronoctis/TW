@@ -1,0 +1,46 @@
+{% extends '::base.html.twig' %}
+
+	{% block title %} Rooms {% endblock %}
+	
+	{% block body %}
+      
+        {% for typeandrooms in typesandrooms %}
+            
+<br/>
+            <form method="POST" id="form-book">
+                <section id="portfolio" class="container main">    
+                  <ul class="gallery col-4">             
+           
+                        {% for type in typeandrooms if %}
+                            {% for i in 0..3 %} 
+                                {% for t, room in type  if t == 0 %}
+                                <li>
+                                     <div class="preview">
+                                        {% set var_id = 'bundles/twnelo/images/portfolio/thumb/item' %}
+                                        {% set var_id = var_id ~ room.getType.id %}
+                                        {% set var_id = var_id ~ '.jpg' %}
+                                        <img src="{{ asset(var_id) }}">
+                                        <div class="overlay">
+                                        </div>
+                                    </div>
+
+                                    <div class="desc">
+                                        <h5> {{ room.getType.name }} </h5>
+                                        <strong>Beds: </strong>Double bed<br/>
+                                        <strong>Available rooms: </strong> {{ type|length }} <br/>
+                                        <strong>Prices: </strong> {{ room.getPrice }} <br/>
+                                        <button type = "submit" name="singleapartment" value = "{{ room.getType.id }}" class="btn btn-success btn-small">Book a room !</button>
+                                    </div> 
+                                </li> 
+                            {% endfor %}
+                        {% endfor %}
+
+                        {% endfor %}
+
+                    </ul>
+                </section>
+            </form>
+
+        {% endfor %}
+
+    {% endblock %} 

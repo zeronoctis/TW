@@ -1,0 +1,12 @@
+<?php
+
+namespace TW\neloBundle\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+class DefaultController extends Controller{
+	public function homeAction(){
+		return $this->render('TWneloBundle:Default:home.html.twig');	
+	}
+}
+
+?>

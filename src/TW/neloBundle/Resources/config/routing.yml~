@@ -1,0 +1,21 @@
+welcome:
+    path:  /home/
+    defaults: { _controller: TWneloBundle:Default:home }
+
+rooms:
+    path:  /rooms/
+    defaults: { _controller: TWneloBundle:Rooms:rooms }
+
+services:
+    path:  /services/
+    defaults: { _controller: TWneloBundle:Services:services }
+
+about_us:
+    path:  /about/
+    defaults: { _controller: TWneloBundle:About:about }
+
+contact_us:
+    path:  /contact/
+    defaults: { _controller: TWneloBundle:Contact:contact }
+
+
